@@ -117,43 +117,8 @@ public class ShortestPaths {
         return parser.parse();
     }
 
-//    public static void main(String[] args) {
-//      // read command line args
-//      String fileType = args[0];
-//      String fileName = args[1];
-//      String SidewalkOrigCode = args[2];
-//
-//      String SidewalkDestCode = null;
-//      if (args.length == 4) {
-//        SidewalkDestCode = args[3];
-//      }
-//
-//      // parse a graph with the given type and filename
-//      Graph graph;
-//      try {
-//          graph = parseGraph(fileType, fileName);
-//      } catch (FileNotFoundException e) {
-//          System.out.println("Could not open file " + fileName);
-//          return;
-//      }
-//      graph.report();
-//
-//
-//      // TODO 4: create a ShortestPaths object, use it to compute shortest
-//      // paths data from the origin node given by origCode.
-//
-//      // TODO 5:
-//      // If destCode was not given, print each reachable node followed by the
-//      // length of the shortest path to it from the origin.
-//
-//      // TODO 6:
-//      // If destCode was given, print the nodes in the path from
-//      // origCode to destCode, followed by the total path length
-//      // If no path exists, print a message saying so.
-//    }
-//}
 public static void main(String[] args) {
-    // Validate required arguments
+//     Validate required arguments
     if (args.length < 3) { // Check if fewer than 3 arguments are provided
         System.out.println("Error: Insufficient arguments provided. Expected at least 3 arguments:");
         System.out.println("Usage: <fileType> <fileName> <SidewalkOrigCode> [SidewalkDestCode]");
