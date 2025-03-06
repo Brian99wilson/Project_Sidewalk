@@ -131,7 +131,7 @@ public static void main(String[] args) {
     String SidewalkOrigCode = args[2];
 
     // Handle optional destination code
-    String SidewalkDestCode = null;
+    String SidewalkDestCode = "/Users/brian_wilson/Comp Year 2/DataStuctNAlgo2/Final Project/Program4-skeleton/app/Simple0.txt";
     if (args.length >= 4) { // Check if an optional 4th argument is provided
         SidewalkDestCode = args[3];
     } else {
