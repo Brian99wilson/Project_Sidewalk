@@ -94,7 +94,28 @@ public class ShortestPaths {
         // TODO 3 - implement this method to reconstruct sequence of Nodes
         // along the shortest path from the origin to destination using the
         // paths data computed by Dijkstra's algorithm.
-        throw new UnsupportedOperationException();
+
+        // Check if paths data exists for the given destination
+        if (!paths.containsKey(destination)) {
+            // If no path exists, return null
+            return null;
+        }
+
+        // Initialize a LinkedList to store the path
+        LinkedList<Node> path = new LinkedList<>();
+
+        // Start from the destination node and follow the "previous" pointers
+        Node current = destination;
+        while (current != null) {
+            // Add the current node to the beginning of the list to reverse the order
+            path.addFirst(current);
+
+            // Move to the previous node in the shortest path
+            current = paths.get(current).previous;
+        }
+
+        // Return the reconstructed path
+        return path;
     }
 
 
