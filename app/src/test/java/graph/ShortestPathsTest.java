@@ -55,10 +55,10 @@ public class ShortestPathsTest {
         sp.compute(a);
         Node b = g.getNode("B");
         LinkedList<Node> abPath = sp.shortestPath(b);
-        assertEquals(abPath.size(), 2);
+        assertEquals(2, abPath.size());
         assertEquals(abPath.getFirst(), a);
         assertEquals(abPath.getLast(), b);
-        assertEquals(sp.shortestPathLength(b), 1.0, 1e-6);
+        assertEquals(1.0, sp.shortestPathLength(b), 1e-6);
     }
 
     /**
