@@ -63,7 +63,25 @@ public class ShortestPaths {
     public double shortestPathLength(Node destination) {
         // TODO 2 - implement this method to fetch the shortest path length
         // from the paths data computed by Dijkstra's algorithm.
-        throw new UnsupportedOperationException();
+
+        // Ensure that the paths map is initialized
+        // Additional check: throw an error if compute(origin) hasn't been called.
+        if (paths == null) {
+            throw new IllegalStateException("Paths data is not initialized. Call compute(origin) first.");
+        }
+
+        // Retrieve the PathData for the destination node from the paths map
+        PathData pathData = paths.get(destination);
+
+        // If no entry exists in the paths map for the destination node, it means that
+        // the destination is unreachable from the origin.
+        // Return infinity to indicate no path exists.
+        if (pathData == null) {
+            return Double.POSITIVE_INFINITY;
+        }
+
+        // If the PathData exists, return the stored shortest distance to the destination
+        return pathData.distance;
     }
 
     /** Returns a LinkedList of the nodes along the shortest path from origin
@@ -151,6 +169,7 @@ public static void main(String[] args) {
     graph.report();
 
     // Further processing for shortest paths
+    // TODO 4:
     ShortestPaths sp = new ShortestPaths();
     Node originNode = graph.getNode(SidewalkOrigCode);
 
