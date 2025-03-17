@@ -197,15 +197,15 @@ public static void main(String[] args) {
     // Compute shortestpaths from originNode
     sp.compute(originNode);
 
-    if (SidewalkDestCode == null) {
-        // TODO 5: Handle no destination code case
-        // Example: Print reachable nodes and shortest path lengths
+    if (SidewalkDestCode == null || SidewalkDestCode.isEmpty()) {
+        System.out.println("No destination code provided. Listing all reachable nodes:");
         for (Node node : graph.getNodes().values()) {
             double shortestPath = sp.shortestPathLength(node);
             System.out.println("Reachable Node: " + node + ", Shortest Path: " + shortestPath);
         }
-    } else {
-        // TODO 6: Handle when destination code is provided
+    }
+    // TODO 6: Handle when destination code is provided
+    else {
         Node destinationNode = graph.getNode(SidewalkDestCode);
         LinkedList<Node> path = sp.shortestPath(destinationNode);
         if (path == null) {
